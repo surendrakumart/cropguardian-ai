@@ -267,5 +267,5 @@ function DiagnosePage() {
 
       <SiteFooter />
     </div>
-  );
-                    }
+    );
+}
