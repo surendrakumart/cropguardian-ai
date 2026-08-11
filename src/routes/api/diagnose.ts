@@ -75,8 +75,9 @@ If the image is not a plant leaf at all, respond with:
           return Response.json(result)
         } catch (err) {
           console.error('Diagnose API error:', err)
+          const debugMessage = err instanceof Error ? err.message : String(err)
           return Response.json(
-            { error: 'Diagnosis failed, please try again.' },
+            { error: 'Diagnosis failed, please try again.', debug: debugMessage },
             { status: 500 }
           )
         }
